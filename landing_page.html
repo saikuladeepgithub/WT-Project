@@ -1,0 +1,237 @@
+<html>
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Alumini Connect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #101820;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 20px;
+            max-width: 1000px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .glow-effect {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px #63e6d4, 0 0 30px #4af0e2, 0 0 45px #61ffd7;
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .glow-effect:hover {
+            box-shadow: 0 0 20px #ff6f61, 0 0 40px #ff6f61, 0 0 60px #ff6f61;
+        }
+
+        .content-box {
+            background-color: #1e1e2e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            color: white;
+        }
+
+        .container img {
+            width: 400px;
+            height: auto;
+            border-radius: 20px;
+           /* box-shadow: 0 0 15px #ff6f61, 0 0 30px #ff6f61, 0 0 45px #ff6f61;*/
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+
+        .btn {
+           width: 120px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .create-account {
+            background-color: #ff6f61;
+            color: white;
+        }
+        .create-back{
+            background-color:whitesmoke;
+            color:grey;
+        }
+
+        .sign-in {
+            background-color: white;
+            color: #101820;
+            border: 2px solid #ff6f61;
+            width:120px;
+            font-size:16px;
+            border-radius:10px;
+            cursor:pointer;
+            margin-top:10px;
+        }
+
+        .create-account:hover, .sign-in:hover {
+            opacity: 0.8;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px 10px 10px 30px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            background-color: #1e1e2e;
+            border: 1px solid #4af0e2;
+            border-radius: 20px;
+            color: white;
+        }
+
+
+        .details {
+            margin-top: 20px;
+        }
+        .button-container{
+            display:flex;
+            gap:10px;
+            justify-content: space-between;
+            width:100%;
+        }
+        .input-container{
+            position:relative;
+            width:100%;
+        }
+        .input-container i {
+            position: absolute;
+            left: 10px;
+            top: 45%;
+            transform: translateY(-50%);
+            font-size: 15px;
+            color: #555;
+        }
+
+        .form-group{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-effect">
+        <div class="container">
+            <img src="alumini.jpg" alt="Alumini Image">
+            <div class="content-box" id="content-box">
+                <h1>Welcome to Alumini Connect</h1>
+                <h1>Join Today</h1>
+                <h3>Sign-up Here</h3>
+                <button class="btn create-account" onclick="showForm()">Sign-up</button>
+                <h3>Already have an account?</h3>
+                <button class="btn sign-in" onclick="showSignInForm()">Sign In</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showForm() {
+            const contentBox = document.getElementById("content-box");
+            contentBox.innerHTML = `
+                <h1>Sign-up</h1>
+                <form id="sign-up-form"  onsubmit="redirectToHomepage(event)">
+                    <div class="form-group">
+                        <div class="input-container">
+                            <i class="bx bx-user"></i>
+                            <input type="text" id="firstname" name="firstname" placeholder="Firstname" required>
+                        </div>
+                    <div class="form-group">
+                        <div class="input-container">
+                            <i class="bx bx-user"></i>
+                            <input type="text" id="lastname" name="lastname" placeholder="Lastname" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="input-container">
+                        <i class="bx bx-envelope"></i>
+                        <input type="text" id="email" name="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-container">
+                        <i class="bx bx-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                </div>
+                    <button type="button" class="btn create-back" onclick="goBack()">Back</button>
+                    <button type="submit" class="btn create-account" >Sign-up</button>
+                </form>
+            `;
+        }
+        function goBack() {
+            const contentBox = document.getElementById("content-box");
+            contentBox.innerHTML = `
+                <h1>Welcome to Alumini Connect</h1>
+                <h1>Join Today</h1>
+                <h3>Sign-up Here</h3>
+                <button class="btn create-account" onclick="showForm()">Sign-up</button>
+                <h3>Already have an account?</h3>
+                <button class="btn sign-in" onclick="showSignInForm()">Sign In</button>
+            `;
+        }
+        
+        function showSignInForm() {
+            const contentBox = document.getElementById("content-box");
+            contentBox.innerHTML = `
+                <h1>Sign-In</h1>
+                <form id="sign-in-form"  onsubmit="redirectToHomepage(event)">
+                    <div class="form-group">
+                        <div class="input-container">
+                            <i class="bx bx-user"></i>
+                            <input type="text" id="usernameoremail" placeholder="Username or email" required>
+                        </div>
+                <div class="form-group">
+                    <div class="input-container">
+                        <i class="bx bx-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                </div>
+                    <button type="button" class="btn create-back" onclick="goBack()">Back</button>
+                    <button type="submit" class="btn create-account">Sign-In</button>
+                </form>
+            `;
+        }
+        function redirectToHomepage(event) {
+            event.preventDefault(); 
+         window.location.href = "homepage.html"; 
+        }
+
+    </script>
+</body>
+</html>
