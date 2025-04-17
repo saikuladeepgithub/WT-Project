@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>registration page</title>
+    </head>
+    <body background:"/home/rgukt/Downloads/WhatsApp Image 2025-03-18 at 2.55.41 PM.jpeg">
+    <center>
+    <form action="values.php" method="post" enctype="multipart/form-data">
+        <h2> Registration Page</h2><b>
+        <div class="form-box ">
+            <div class="input-box form-group">
+                <label for="firstname">First Name :</label>
+                <i class="bx bx-user"></i>
+                <input type="text" class="input-feild" id="firstname" placeholder="Firstname" required>
+            </div>
+            <div class="input-box form-group">
+                <label for="lastname">Last Name :</label>
+                <input type="text" class="input-feild" id="lastname" placeholder="Lastname" required>
+            </div>
+                
+            <div class="input-box form-group">
+                <label for="branch">Branch :</label>
+                <input type="text" class="input-feild" id="branch" placeholder="Enter Branch" required>
+            </div>
+            <div class="input-box form-group">
+                <label for="year">Year of Passed Out :</label>
+                <input type="text" class="input-feild" id="year" placeholder="Enter Passed out Year" required>
+                       
+            </div>
+            <div class="input-box form-group">
+                <label for="qua">Qualification :</label>
+                <input type="text" class="input-feild" id="qua" placeholder="Enter Qualification" required>
+                       
+            </div>
+            <div class="input-box form-group">
+                <label for="des">Designation :</label>
+                <input type="text" class="input-feild" id="des" placeholder="Enter Designation" required>
+                       
+            </div>
+            <div class="input-box form-group">
+                <label for="master">Mastery :</label>
+                <input type="text" class="input-feild" id="master" placeholder="Master in" required>
+                       
+            </div>
+            <div class="input-box form-group">
+                <label for="mail">Email :</label>
+                <input type="email" class="input-feild" id="Email" placeholder="Enter Email" required>
+                       
+            </div>
+            <div class="input-box form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" class="input-feild" name="phone" placeholder="Enter 10-digit number" pattern="\d{10}" maxlength="10" required>
+                       
+            </div>
+            <div class="input-box form-group">
+                <label for="dob">DOB :</label>
+                <input type="date" class="input-feild" id="dob" required>
+                       
+            </div>
+            
+                   
+            <div class="input-box form-group">
+                <label for="add">Address:</label>
+                <input type="text" class="input-feild" id="add" placeholder="Street Address" required>
+                      
+            </div>
+             <div class="sub-fields">     
+            <div class="input-box form-group">
+                <input type="text" class="input-feild" id="city" placeholder="City" required>
+            </div>
+            <div class="input-box form-group">
+                <input type="text" class="input-feild" id="state" placeholder="State" required>
+            </div>
+                
+                   
+            <div class="input-box form-group">
+                <input type="text" class="input-feild" id="pincode" placeholder="Pincode" required>
+            </div>
+            <div class="input-box form-group">
+                <input type="text" class="input-feild" id="country" placeholder="Country" required>
+            </div>
+            </div>    
+             <div class="input-box form-group">
+                <label for="photo">Upload Photo :</label>
+                <input type="file" id="photo"  name="photo" accept="image/*" required>
+            </div >
+            <div class="input-box">
+                <input type="submit" class="submit" value="Register">
+            </div>
+                </b>
+        </div>
+    </form>   
+    </center>   
+    </body>
+</html>
